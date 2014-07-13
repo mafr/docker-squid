@@ -7,21 +7,21 @@ non-caching forward proxy using [Squid](http://www.squid-cache.org/).
 First of all, use the `htdigest` program from the `apache2-utils` package
 to add users:
 
-   $ htdigest conf/passwd SurfinUSA myuser
-   Adding user myuser in realm SurfinUSA
-   New password:
-   Re-type new password:
-   $ 
+    $ htdigest conf/passwd SurfinUSA myuser
+    Adding user myuser in realm SurfinUSA
+    New password:
+    Re-type new password:
+    $ 
 
 The realm `SurfinUSA` has to match the realm set in `conf/squid.conf`.
 
 From the project directory you can build and tag the image:
 
-   $ sudo docker build -t my-squid .
+    $ sudo docker build -t my-squid .
 
 Use the built image to create a container and run it:
 
-   $ sudo docker run \
+    $ sudo docker run \
        --detach \
        --name=squid \
        --user=proxy \
